@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="../img/header1.png">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="">
     <title>Portifolio</title>
     
 </head>
@@ -12,28 +14,32 @@
         <nav>
           <ul>
             <a href="home.html"><li class="active">Home</li></a>
+            <a href="desenho.html"><li>Desenho</li></a>
             <a href="modelos.html"><li>Modelos</li></a>
             <a href="novo.html"><li>Projetos</li></a>
           </ul>
           <ul>
-            <li><i data-feather="user"></i></li>
+            <li>
+              <div class="toggle">
+                <input id="switch" type="checkbox" name="theme">
+                <label for="switch">Toggle</label>
+              </div>
+            </li>
           </ul>
         </nav>
-        <div class="content">
+        <div class="content"> 
           <div class="social-media">
             <a class="icone" target="_blank" href="https://www.instagram.com/_estherluize/"><i data-feather="instagram"></i></a>
             <a class="icone" target="_blank" href="https://github.com/EstherLuize"><i data-feather="github"></i></a>
             <a class="icone" target="_blank" href="https://www.linkedin.com/in/esther-luize-b826a623a/"><i data-feather="linkedin"></i></a>
           </div>
           <div class="content-text left">
-            <h3>Ola, Eu sou</h3>
-            <h1 class="nome">Esther Luize</h1>
+            <h1 class="type">Esther Luize</h1>
           </div>
           <div class="content-text right">
-            <h3></h3>
-            <h1>Designer de Calçados</h1>
+            <h1 class="type2">Designer de <br>Calçados</h1>
           </div>
-          <img src="../img/head.png">
+          <img id="figura" onclick="trocar()" src="../img/head2.png" class="js-theme">
         </div>
       </div>
 
@@ -42,6 +48,6 @@
       <script>
         feather.replace()
     </script>
-    
+
 </body>
 </html>

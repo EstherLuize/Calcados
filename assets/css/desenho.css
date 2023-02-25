@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: var(--bg);
+  background: var(--bg-gradient);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+html{
+  --bg: #fbb9de;
+  --bg-gradient: linear-gradient(90deg, #fbb9de 0%, #8bf7f9 100%);
+  --color-headings: #0077ff;
+  --text:#fff;
+  --menu: #fc8828;
+  --icons: #fff;
+}
+
+
+.home{
+  background: none;
+}
+.container {
+  width: 80%;
+  height: 70%;
+  position: relative;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background: inherit;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.container:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  filter: blur(10px);
+  margin: -20px;
+}
+nav {
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  color: white;
+  padding: 0;
+}
+nav ul li {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+}
+.usuario{
+  margin-left: 810px;
+}
+
+nav ul li.active {
+  background: var(--menu);
+  padding: 3px 15px;
+  border-radius: 8px;
+}
+
+input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: grey;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+label::after{
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background-color: var(--color-headings);
+}
+
+input:checked + label::after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 45px;
+}
+
+.icone{
+  color: var(--icons);
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+}
+.content img {
+  position: relative;
+  top: 24%;
+  width: 30%;
+  left: 2%;
+}
+.content .texto1 {
+  font-size: 20px;
+  margin-top: 50px;
+  width: 600px;
+  margin-left: 60px;
+  text-align: justify;
+}
+
+.content-image [data]{
+  opacity: 0;
+  width: 0%;
+  height: 0%;
+  object-fit: cover; 
+}
+
+.content-image [src]{
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.content .texto2 {
+  font-size: 20px;
+  margin-top: 25px;
+  width: 600px;
+  margin-left: 60px;
+  text-align: justify;
+}
+.content .social-media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  height: 100%;
+  color: white;
+}
+.content-image{
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+}
+
+.content .social-media svg {
+  margin: 15px 30px;
+}
+.content-text {
+  color: var(--text);
+  width: 100%;
+  padding: 0 50px;
+}
+.content-text h1,
+.content-text h3 {  
+  margin-left: 36%;
+}
+.content-text h1 {
+  font-size: 40px;
+}
+
+.content-text h1 #titulo{
+  position: relative;
+}
+
+.content-text.right {
+  text-align: right;
+  margin-top: 170px;
+}
+.content-text.left {
+  margin-top:40%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+  margin-bottom: 50px;
+  margin-left: 60px;
+}
+
+.location-listing {
+  position: relative;
+}
+
+.location-image {
+  line-height: 0;
+  overflow: hidden;
+  
+}
+
+.location-image img {
+  object-fit:cover;
+  width: 300px;
+  height: 300px;
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+}
+
+.location-title {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  color: white;
+  
+  /* position the text in t’ middle*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-listing:hover .location-image img {
+  transform: scale(1.2)
+}
+
+@keyframes move {
+  from {
+    transform: translate(-50%, -55%) rotate(-25deg);
+  }
+}
